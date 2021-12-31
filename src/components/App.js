@@ -5,12 +5,11 @@ import reducer from '../reducers';
 import EventForm from "./EventForm";
 import Events from "./Events";
 
-
-console.log({AppContext})
-
-
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, [])
+  const initialState = {
+    events: []
+  }
+  const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
     <AppContext.Provider value={{ state, dispatch}}>
